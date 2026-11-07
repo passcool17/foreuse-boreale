@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-07",
+  "timezone": "America/Toronto",
+  "node": "v22.23.4",
+  "npmTest": { "pass": 120, "fail": 0 },
+  "sweep": "OK 1000/1000",
+  "change": "FUEL_THRUST 3 to 2.4. Speed 4 tiles/s. Derived climb 0.6 fuel/tile. Tank, credits 50, drill 1, falls, gas, heat, prices, score unchanged.",
+  "climbBrowser": {
+    "seed": 7,
+    "drilledTilesFuel": "100 to 92",
+    "tilesClimbed": 7.803,
+    "fuelUsed": 4.68,
+    "perTile": 0.5997,
+    "predicted": 0.6,
+    "hull": 100
+  },
+  "saleBrowser": {
+    "seed": 7,
+    "ore": "copper column 22 row 1",
+    "cargoAfterPickup": 1,
+    "sold": 10,
+    "creditsAfterSale": 60,
+    "refuel": "1 credit, fuel 98.003 to 99.003, credits 60 to 59",
+    "reservoirClick": "disabled at 59 credits, no debit",
+    "setup": false
+  },
+  "dockFix": "A dock is removed when row 1 under it is no longer solid, so the rig can drop one tile and contact the nugget.",
+  "refuelFix": "Whole units that fit in the tank only. A unit that would be clamped away is not billed.",
+  "feasibility": {
+    "model": "grid costs from CFG, real sell/refuel/buy, no teleport, no free fuel, not Matter",
+    "target": "18/20",
+    "met": false,
+    "holdout2001": "not run",
+    "beforeThrust3": {
+      "base": { "wins": 0, "meanMaxY": 99.1, "meanMargin": -89.4, "positiveSeeds": 1 },
+      "prudent": { "wins": 0, "meanMaxY": 68.9, "meanMargin": 57.2, "positiveSeeds": 18 }
+    },
+    "afterThrust2_4": {
+      "base4000": { "wins": 0, "meanMaxY": 114.55, "meanMargin": 36.06, "positiveSeeds": 11, "hitStepCap": 3 },
+      "prudent4000": { "wins": 0, "meanMaxY": 114.05, "meanMargin": 305.44, "positiveSeeds": 19, "meanCreditsLeft": 329.2, "hitStepCap": 6 },
+      "prudent12000": { "wins": 0, "meanMaxY": 115.25, "maxMaxY": 147, "meanMargin": 256.9, "note": "still stops; 1020 maxY 145 with 331 credits and a full tank" }
+    },
+    "traces": {
+      "1004": "bloque at y=20, sold 0, both policies. Return path, not the new rate.",
+      "1011base": "bought reservoir+meche2, sold 825, burned 703, credits 0, maxY 115",
+      "1015prudent": "sold 2185, burned 1452.7, credits 749, fuel 159.9, maxY 122, back on the pad",
+      "1020prudent12000": "6770 steps, maxY 145, credits 331, fuel 159.5, y=0, not a win"
+    },
+    "heartClimbFuel": 117,
+    "tankAfterReservoir": 160,
+    "headroom": 43,
+    "nextMeasurementNotARuleChange": "A bot that stages the shaft in tank-sized segments while the account can still buy fuel. Do not cut thrust again or enlarge the tank before that measurement."
+  },
+  "rescue": {
+    "browserClick": "setup ?debug=rescue-setup, fuel 5 to 40, credits 10, sold 0, second click does nothing",
+    "score": "unchanged, unit test asserts sold and score stay put"
+  },
+  "mobile390": {
+    "holdRelease": "cell 20 to 21, stays 21 after pointerup",
+    "escape": "pauses and resumes",
+    "blur": "pauses"
+  },
+  "planner2026-11-07": {
+    "seeds": "1001-1020",
+    "wins": 0,
+    "holdout": "not run",
+    "npmTest": 125,
+    "sweep": "OK 1000/1000",
+    "priorWinTrace": {
+      "seed": 1012,
+      "heart": { "x": 6, "y": 195 },
+      "sold": 1090,
+      "credits": 131,
+      "fuel": 20.1,
+      "burned": 827.4,
+      "upgrades": ["reservoir", "isolation"],
+      "note": "trace from the run before the detour fix; current binary does not repeat it"
+    },
+    "failure1004": {
+      "heart": { "x": 36, "y": 195 },
+      "shaftX": 20,
+      "stairClimb": 133,
+      "tank": 160,
+      "end": { "fuel": 12.1, "credits": 0, "frontierRow": 54, "returnRequired": 29.1, "sold": 390, "upgrades": ["reservoir"], "heartAboard": false }
+    },
+    "blocker": "fuelTo and the stair walk home disagree, so the bot refuses a step it could still climb, then stops with fuel left and no credits"
+  },
+  "notPhysicsProof": true,
+  "fullHeartRunInBrowser": "not done; the early sale loop was played, a 195-row Matter route was not"
+}

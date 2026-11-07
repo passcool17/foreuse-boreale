@@ -1,0 +1,11 @@
+{
+  "name": "foreuse-boreale",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "sweep": "node tools/seedSweep.js",
+    "feasibility": "node tools/feasibility.js",
+    "serve": "node tools/serve.js"
+  }
+}

@@ -1,0 +1,25 @@
+Rapport du prototype — 2026-11-07 (America/Toronto)
+
+Statut : prototype jouable. Équilibre non final. Cible 18/20 non atteinte.
+Publication GitHub passcool17/foreuse-boreale : impossible depuis cet environnement
+(gh installé, aucun compte connecté, GH_TOKEN et GITHUB_TOKEN absents,
+remote git = brouillon Origin, pas github.com).
+
+Règles en cours, inchangées pour cette livraison :
+- forage : 1 carburant par tuile
+- propulseur : 2,4 / s à 4 tuiles/s, soit 0,6 par tuile
+- crédits de départ : 50
+- réservoir : 100, puis 160 avec Réservoir+
+- dépannage unique au Poste, sans crédit et sans score
+
+Tests de cette livraison :
+- npm test : 125 pass, 0 fail (Node, environ 0,6 s)
+- npm run sweep : OK 1000/1000
+- bot de validation, graines 1001–1020 : 0/20 (pas une preuve physique)
+- graines 2001–2020 : non lancées
+- fichier HTML ouvert en file:// après enregistrement : menu, Jouer,
+  déplacement (colonne 20 → 21), Échap = pause
+
+Ouvrir : Foreuse-Boreale.html depuis le dossier Téléchargements.
+Pages : docs/index.html sert https://<utilisateur>.github.io/foreuse-boreale/
+Ne pas ouvrir index.html depuis l’intérieur du zip.

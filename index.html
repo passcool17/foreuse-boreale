@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101614">
+  <title>Foreuse Boréale</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect fill='%23c46a2c' width='16' height='16'/%3E%3Crect fill='%23f3efe4' x='3' y='3' width='10' height='4'/%3E%3Crect fill='%23181614' x='3' y='9' width='10' height='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="src/game/ui.css">
+</head>
+<body>
+  <div id="jeu"></div>
+  <div id="ui"></div>
+  <p id="chargement">Chargement de la foreuse…</p>
+  <script>
+    window.setTimeout(function () {
+      if (window.__FB_BOOT) return;
+      var el = document.getElementById('chargement');
+      if (!el) return;
+      el.className = 'echec';
+      el.textContent = 'Le jeu n’a pas démarré. Ouvrir index.html dans l’archive ZIP ne charge pas le reste des fichiers, et le navigateur bloque les modules d’un fichier local. Télécharge Foreuse-Boreale.html, puis ouvre ce fichier depuis le dossier Téléchargements (double-clic). L’aperçu dans le clavardage ou dans le zip ne lance pas le jeu. Aucune installation.';
+    }, 1500);
+  </script>
+  <script src="vendor/phaser.min.js"></script>
+  <script type="module" src="src/game/main.js"></script>
+</body>
+</html>

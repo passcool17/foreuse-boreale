@@ -1,0 +1,14 @@
+Foreuse Boréale — prototype, équilibre non final
+
+Le fichier à ouvrir est Foreuse-Boreale.html. Il contient déjà tout le jeu.
+Pour un site dans le dossier /foreuse-boreale/, le même contenu est docs/index.html.
+
+1. Télécharge Foreuse-Boreale.html sur ton ordinateur.
+2. Ouvre-le depuis le dossier Téléchargements, par un double-clic.
+3. Le menu s’affiche. Choisis Jouer.
+
+Ça ne marche pas si le fichier reste dans l’aperçu du zip, ni dans l’aperçu du clavardage : ces aperçus ne lancent pas les scripts. Il faut le fichier lui-même, une fois enregistré.
+
+Pas d’installation, pas de commande, pas besoin d’Internet au moment de jouer.
+
+index.html, ouvert dans le zip, reste sur « Chargement de la foreuse… ». Ce n’est pas le fichier à utiliser.
